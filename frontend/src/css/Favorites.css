@@ -1,0 +1,119 @@
+/* Favorites Page Styling */
+.favorites {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: calc(100vh - 200px);
+}
+
+.favorites h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.empty-favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.empty-favorites h1 {
+  color: #e50914;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.empty-favorites p {
+  color: #999;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Animation for movie cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movie-grid > * {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .favorites {
+    padding: 1.5rem;
+  }
+  
+  .favorites h1 {
+    font-size: 2rem;
+  }
+  
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites {
+    padding: 1rem;
+  }
+  
+  .favorites h1 {
+    font-size: 1.75rem;
+  }
+  
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  
+  .empty-favorites {
+    padding: 1.5rem;
+  }
+  
+  .empty-favorites h1 {
+    font-size: 1.5rem;
+  }
+  
+  .empty-favorites p {
+    font-size: 1rem;
+  }
+}
